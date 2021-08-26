@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		5E417DBE26D7627D003AA577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DBD26D7627D003AA577 /* AppDelegate.swift */; };
 		5E417DC026D7627D003AA577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DBF26D7627D003AA577 /* SceneDelegate.swift */; };
-		5E417DC226D7627D003AA577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DC126D7627D003AA577 /* ViewController.swift */; };
 		5E417DC526D7627D003AA577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E417DC326D7627D003AA577 /* Main.storyboard */; };
 		5E417DC726D7627E003AA577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E417DC626D7627E003AA577 /* Assets.xcassets */; };
 		5E417DCA26D7627E003AA577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E417DC826D7627E003AA577 /* LaunchScreen.storyboard */; };
+		5E417DD726D763EB003AA577 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DD626D763EB003AA577 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E417DBA26D7627D003AA577 /* Bubble Taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Taxi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E417DBD26D7627D003AA577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E417DBF26D7627D003AA577 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E417DC126D7627D003AA577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E417DC426D7627D003AA577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E417DC626D7627E003AA577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E417DC926D7627E003AA577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E417DCB26D7627E003AA577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E417DD626D763EB003AA577 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,55 @@
 		5E417DBC26D7627D003AA577 /* Bubble Taxi */ = {
 			isa = PBXGroup;
 			children = (
+				5E417DD426D76323003AA577 /* Model */,
+				5E417DD326D7631A003AA577 /* Controller */,
+				5E417DD226D7630C003AA577 /* View */,
+				5E417DD526D7633E003AA577 /* Service */,
+				5E417DD126D762DC003AA577 /* Utils */,
 				5E417DBD26D7627D003AA577 /* AppDelegate.swift */,
 				5E417DBF26D7627D003AA577 /* SceneDelegate.swift */,
-				5E417DC126D7627D003AA577 /* ViewController.swift */,
 				5E417DC326D7627D003AA577 /* Main.storyboard */,
 				5E417DC626D7627E003AA577 /* Assets.xcassets */,
 				5E417DC826D7627E003AA577 /* LaunchScreen.storyboard */,
 				5E417DCB26D7627E003AA577 /* Info.plist */,
 			);
 			path = "Bubble Taxi";
+			sourceTree = "<group>";
+		};
+		5E417DD126D762DC003AA577 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5E417DD226D7630C003AA577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E417DD326D7631A003AA577 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E417DD626D763EB003AA577 /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E417DD426D76323003AA577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E417DD526D7633E003AA577 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +177,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E417DC226D7627D003AA577 /* ViewController.swift in Sources */,
 				5E417DBE26D7627D003AA577 /* AppDelegate.swift in Sources */,
+				5E417DD726D763EB003AA577 /* LoginController.swift in Sources */,
 				5E417DC026D7627D003AA577 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +332,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.leeesangheee.Bubble-Taxi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeesangheee.bubbleTaxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.leeesangheee.Bubble-Taxi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leeesangheee.bubbleTaxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
