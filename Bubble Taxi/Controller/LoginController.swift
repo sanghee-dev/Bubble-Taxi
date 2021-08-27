@@ -9,6 +9,8 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    // MARK: Properties
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Bubble"
@@ -53,12 +55,30 @@ class LoginController: UIViewController {
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account? ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         let signUpTitle = NSMutableAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint])
         attributedTitle.append(signUpTitle)
+        
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
+    
+    // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        contigureUI()
+    }
+    
+    // MARK: Selectors
+    
+    @objc func handleShowSignUp() {
+        let controller = SignUpController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // MARK: Helper Functions
+    
+    func contigureUI() {
+        configureNavigationBar()
         
         view.backgroundColor = .backgroundColor
         
@@ -77,9 +97,9 @@ class LoginController: UIViewController {
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
     }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
-    }
     
+    func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .default
+    }
 }
