@@ -1,8 +1,8 @@
 //
-//  Extensions.swift
+//  View.swift
 //  Bubble Taxi
 //
-//  Created by leeesangheee on 2021/08/26.
+//  Created by leeesangheee on 2021/08/27.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ extension UIView {
         
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: imageName)
-        imageView.tintColor = .systemTeal
+        imageView.tintColor = .mainBlueTint
     
         view.addSubview(imageView)
         imageView.centerY(inView: view)
@@ -71,19 +71,4 @@ extension UIView {
     func centerY(inView view: UIView) {
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
-}
-
-extension UITextField {
-    
-    func textField(withPlaceholder placeholder: String, isSecureTextEntry: Bool) -> UITextField {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.font = UIFont.systemFont(ofSize: 16)
-        tf.textColor = .black
-        tf.keyboardAppearance = .light
-        tf.isSecureTextEntry = isSecureTextEntry
-        tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        return tf
-    }
-    
 }
