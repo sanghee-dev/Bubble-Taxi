@@ -11,22 +11,14 @@ class LoginController: UIViewController {
     
     // MARK: Properties
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Bubble"
-        label.font = UIFont(name: "Futura", size: 72)
-        label.textColor = .mainBlueTint
-        return label
-    }()
-    
     private lazy var emailContainerView: UIView = {
-        let view = UIView().textFieldContainerView(imageName: "envelope", textField: emailTextField)
+        let view = UIView().inputContainerView(imageName: "envelope", textField: emailTextField)
         view.heightAnchor.constraint(equalToConstant: 48).isActive = true
         return view
     }()
     
     private lazy var passwordContainerView: UIView = {
-        let view = UIView().textFieldContainerView(imageName: "lock", textField: passwordTextField)
+        let view = UIView().inputContainerView(imageName: "lock", textField: passwordTextField)
         view.heightAnchor.constraint(equalToConstant: 48).isActive = true
         return view
     }()
@@ -39,14 +31,9 @@ class LoginController: UIViewController {
         return UITextField().textField(withPlaceholder: "Password", isSecureTextEntry: true)
     }()
     
-    private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
+    private let loginButton: AuthButton = {
+        let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .mainBlueTint
-        button.layer.cornerRadius = 24
-        button.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         return button
     }()
     
@@ -65,6 +52,7 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         contigureUI()
     }
     
@@ -79,11 +67,11 @@ class LoginController: UIViewController {
     
     func contigureUI() {
         configureNavigationBar()
-        
         view.backgroundColor = .backgroundColor
         
-        view.addSubview(titleLabel)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 60, paddingLeft: 32)
+        let title = UILabel().titleLabel()
+        view.addSubview(title)
+        title.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 60, paddingLeft: 32)
         
         let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
         stack.axis = .vertical
@@ -91,7 +79,7 @@ class LoginController: UIViewController {
         stack.spacing = 16
         
         view.addSubview(stack)
-        stack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 80, paddingLeft: 32, paddingRight: 32)
+        stack.anchor(top: title.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 80, paddingLeft: 32, paddingRight: 32)
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)

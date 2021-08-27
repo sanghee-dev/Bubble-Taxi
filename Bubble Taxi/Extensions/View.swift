@@ -9,13 +9,13 @@ import UIKit
 
 extension UIView {
     
-    func textFieldContainerView(imageName: String, textField: UITextField) -> UIView {
+    func inputContainerView(imageName: String, textField: UITextField) -> UIView {
         let view = UIView()
         
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: imageName)
         imageView.tintColor = .mainBlueTint
-    
+        
         view.addSubview(imageView)
         imageView.centerY(inView: view)
         imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24)
@@ -23,11 +23,11 @@ extension UIView {
         view.addSubview(textField)
         textField.centerY(inView: view)
         textField.anchor(left: imageView.rightAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
-        
+    
         let separatorView = UIView()
         separatorView.backgroundColor = .systemGroupedBackground
         view.addSubview(separatorView)
-        separatorView.anchor(left: textField.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, height: 1)
+        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, height: 1)
         
         return view
     }
@@ -68,7 +68,7 @@ extension UIView {
     func centerX(inView view: UIView) {
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-    func centerY(inView view: UIView) {
-        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    func centerY(inView view: UIView, constant: CGFloat = 0) {
+        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
     }
 }

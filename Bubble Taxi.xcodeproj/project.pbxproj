@@ -11,6 +11,8 @@
 		5E11F1F926D8C9030092E974 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1F826D8C9030092E974 /* TextField.swift */; };
 		5E11F1FB26D8C92D0092E974 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1FA26D8C92D0092E974 /* Color.swift */; };
 		5E11F1FD26D8D5920092E974 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1FC26D8D5920092E974 /* SignUpController.swift */; };
+		5E11F20126D8DD020092E974 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F20026D8DD020092E974 /* Label.swift */; };
+		5E11F20526D8E73E0092E974 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F20426D8E73E0092E974 /* AuthButton.swift */; };
 		5E417DBE26D7627D003AA577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DBD26D7627D003AA577 /* AppDelegate.swift */; };
 		5E417DC026D7627D003AA577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DBF26D7627D003AA577 /* SceneDelegate.swift */; };
 		5E417DC526D7627D003AA577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E417DC326D7627D003AA577 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		5E11F1F826D8C9030092E974 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5E11F1FA26D8C92D0092E974 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5E11F1FC26D8D5920092E974 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		5E11F20026D8DD020092E974 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		5E11F20426D8E73E0092E974 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		5E417DBA26D7627D003AA577 /* Bubble Taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Taxi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E417DBD26D7627D003AA577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E417DBF26D7627D003AA577 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 				5E11F1FA26D8C92D0092E974 /* Color.swift */,
 				5E11F1F826D8C9030092E974 /* TextField.swift */,
 				5E11F1F626D8C8D50092E974 /* View.swift */,
+				5E11F20026D8DD020092E974 /* Label.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 		5E417DD226D7630C003AA577 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E11F20426D8E73E0092E974 /* AuthButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,11 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E417DBE26D7627D003AA577 /* AppDelegate.swift in Sources */,
+				5E11F20526D8E73E0092E974 /* AuthButton.swift in Sources */,
 				5E417DD726D763EB003AA577 /* LoginController.swift in Sources */,
 				5E11F1FD26D8D5920092E974 /* SignUpController.swift in Sources */,
 				5E11F1F726D8C8D50092E974 /* View.swift in Sources */,
 				5E11F1F926D8C9030092E974 /* TextField.swift in Sources */,
 				5E417DC026D7627D003AA577 /* SceneDelegate.swift in Sources */,
+				5E11F20126D8DD020092E974 /* Label.swift in Sources */,
 				5E11F1FB26D8C92D0092E974 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
