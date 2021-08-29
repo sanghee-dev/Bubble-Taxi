@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E2DF27EF51A81FD3B6545C2 /* Pods_Bubble_Taxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E2E5C1DE07E0983CBB2A77 /* Pods_Bubble_Taxi.framework */; };
 		5E11F1F726D8C8D50092E974 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1F626D8C8D50092E974 /* View.swift */; };
 		5E11F1F926D8C9030092E974 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1F826D8C9030092E974 /* TextField.swift */; };
 		5E11F1FB26D8C92D0092E974 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1FA26D8C92D0092E974 /* Color.swift */; };
 		5E11F1FD26D8D5920092E974 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F1FC26D8D5920092E974 /* SignUpController.swift */; };
 		5E11F20126D8DD020092E974 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F20026D8DD020092E974 /* Label.swift */; };
 		5E11F20526D8E73E0092E974 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11F20426D8E73E0092E974 /* AuthButton.swift */; };
+		5E11F20926DB50BB0092E974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E11F20826DB50BB0092E974 /* GoogleService-Info.plist */; };
 		5E417DBE26D7627D003AA577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DBD26D7627D003AA577 /* AppDelegate.swift */; };
 		5E417DC026D7627D003AA577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E417DBF26D7627D003AA577 /* SceneDelegate.swift */; };
 		5E417DC526D7627D003AA577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E417DC326D7627D003AA577 /* Main.storyboard */; };
@@ -22,12 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		217155778AACA065B6E88FBF /* Pods-Bubble Taxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bubble Taxi.debug.xcconfig"; path = "Target Support Files/Pods-Bubble Taxi/Pods-Bubble Taxi.debug.xcconfig"; sourceTree = "<group>"; };
 		5E11F1F626D8C8D50092E974 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5E11F1F826D8C9030092E974 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5E11F1FA26D8C92D0092E974 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5E11F1FC26D8D5920092E974 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5E11F20026D8DD020092E974 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		5E11F20426D8E73E0092E974 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		5E11F20826DB50BB0092E974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5E417DBA26D7627D003AA577 /* Bubble Taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Taxi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E417DBD26D7627D003AA577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E417DBF26D7627D003AA577 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		5E417DC926D7627E003AA577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E417DCB26D7627E003AA577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E417DD626D763EB003AA577 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		881E6CF0CEAAD4557CBD1046 /* Pods-Bubble Taxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bubble Taxi.release.xcconfig"; path = "Target Support Files/Pods-Bubble Taxi/Pods-Bubble Taxi.release.xcconfig"; sourceTree = "<group>"; };
+		B3E2E5C1DE07E0983CBB2A77 /* Pods_Bubble_Taxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bubble_Taxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2DF27EF51A81FD3B6545C2 /* Pods_Bubble_Taxi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			children = (
 				5E417DBC26D7627D003AA577 /* Bubble Taxi */,
 				5E417DBB26D7627D003AA577 /* Products */,
+				7BD9EDB1AACAF1AAFD3747A9 /* Pods */,
+				CBF220D4BF30E1617EFC2E4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +99,7 @@
 				5E417DC326D7627D003AA577 /* Main.storyboard */,
 				5E417DC626D7627E003AA577 /* Assets.xcassets */,
 				5E417DC826D7627E003AA577 /* LaunchScreen.storyboard */,
+				5E11F20826DB50BB0092E974 /* GoogleService-Info.plist */,
 				5E417DCB26D7627E003AA577 /* Info.plist */,
 			);
 			path = "Bubble Taxi";
@@ -133,6 +143,24 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		7BD9EDB1AACAF1AAFD3747A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				217155778AACA065B6E88FBF /* Pods-Bubble Taxi.debug.xcconfig */,
+				881E6CF0CEAAD4557CBD1046 /* Pods-Bubble Taxi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CBF220D4BF30E1617EFC2E4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3E2E5C1DE07E0983CBB2A77 /* Pods_Bubble_Taxi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E417DCE26D7627E003AA577 /* Build configuration list for PBXNativeTarget "Bubble Taxi" */;
 			buildPhases = (
+				CDEFA71EE3E0F4141963A103 /* [CP] Check Pods Manifest.lock */,
 				5E417DB626D7627D003AA577 /* Sources */,
 				5E417DB726D7627D003AA577 /* Frameworks */,
 				5E417DB826D7627D003AA577 /* Resources */,
+				5517C31B1E2B84C9290D9838 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,12 +221,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E417DCA26D7627E003AA577 /* LaunchScreen.storyboard in Resources */,
+				5E11F20926DB50BB0092E974 /* GoogleService-Info.plist in Resources */,
 				5E417DC726D7627E003AA577 /* Assets.xcassets in Resources */,
 				5E417DC526D7627D003AA577 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5517C31B1E2B84C9290D9838 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bubble Taxi/Pods-Bubble Taxi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bubble Taxi/Pods-Bubble Taxi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bubble Taxi/Pods-Bubble Taxi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDEFA71EE3E0F4141963A103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bubble Taxi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E417DB626D7627D003AA577 /* Sources */ = {
@@ -355,6 +428,7 @@
 		};
 		5E417DCF26D7627E003AA577 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 217155778AACA065B6E88FBF /* Pods-Bubble Taxi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +448,7 @@
 		};
 		5E417DD026D7627E003AA577 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 881E6CF0CEAAD4557CBD1046 /* Pods-Bubble Taxi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
