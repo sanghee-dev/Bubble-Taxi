@@ -40,7 +40,7 @@ class LoginController: UIViewController {
         return button
     }()
     
-//    private let googleButton: GIDSignInButton = {
+//    private let googleLoginButton: GIDSignInButton = {
 //        let button = GIDSignInButton()
 //        button.colorScheme = .light
 //        button.style = .iconOnly
