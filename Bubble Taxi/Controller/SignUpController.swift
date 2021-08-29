@@ -94,7 +94,7 @@ class SignUpController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                print(error)
+                print(error.localizedDescription)
                 return
             }
             guard let uid = result?.user.uid else { return }
