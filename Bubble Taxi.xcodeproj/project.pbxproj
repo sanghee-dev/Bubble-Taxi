@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -149,7 +149,6 @@
 				217155778AACA065B6E88FBF /* Pods-Bubble Taxi.debug.xcconfig */,
 				881E6CF0CEAAD4557CBD1046 /* Pods-Bubble Taxi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

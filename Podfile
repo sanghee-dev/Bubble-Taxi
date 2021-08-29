@@ -12,5 +12,6 @@ target 'Bubble Taxi' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
 	pod 'GeoFire', '>= 1.1'
+  pod 'GoogleSignIn'
 
 end
