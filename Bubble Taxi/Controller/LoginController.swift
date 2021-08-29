@@ -89,19 +89,22 @@ class LoginController: UIViewController {
     }
     
     @objc func handleGoogleLogin() {
-        let googleClientId = FirebaseApp.app()?.options.clientID ?? ""        
-        let signInConfig = GIDConfiguration.init(clientID: googleClientId)
-        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
-            guard error == nil else { return }
-            guard let user = user else { return }
-            
-            let emailAddress = user.profile?.email
-            let fullName = user.profile?.name
-            let givenName = user.profile?.givenName
-
-            let profilePicUrl = user.profile?.imageURL(withDimension: 320)
-            
-            print(emailAddress ?? "", fullName ?? "", givenName ?? "", profilePicUrl ?? "")
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let authentication = user?.authentication, let idToken = authentication.idToken else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+            Auth.auth().signIn(with: credential) { result, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
