@@ -71,7 +71,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contigureUI()
+        configureUI()
     }
     
     // MARK: Selectors
@@ -84,7 +84,7 @@ class LoginController: UIViewController {
                 print(error.localizedDescription)
                 return
             }
-            print("로그인 성공")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -112,7 +112,7 @@ class LoginController: UIViewController {
     
     // MARK: Helper Functions
     
-    func contigureUI() {
+    func configureUI() {
         configureNavigationBar()
         view.backgroundColor = .backgroundColor
         

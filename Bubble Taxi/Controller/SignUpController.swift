@@ -81,7 +81,7 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contigureUI()
+        configureUI()
     }
     
     // MARK: Selectors]]
@@ -102,7 +102,7 @@ class SignUpController: UIViewController {
             let values: [String: Any] = ["email": email, "username": username, "accountType": accountTypeIndex]
             
             Database.database().reference().child("users").child(uid).updateChildValues(values) { error, ref in
-                print("계정생성 성공")
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -113,7 +113,7 @@ class SignUpController: UIViewController {
     
     // MARK: Helper Functions
     
-    func contigureUI() {
+    func configureUI() {
         configureNavigationBar()
         view.backgroundColor = .backgroundColor
         
