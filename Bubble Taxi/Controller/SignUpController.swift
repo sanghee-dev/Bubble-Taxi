@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpController: UIViewController {
     
@@ -60,6 +61,7 @@ class SignUpController: UIViewController {
     private let signUpButton: AuthButton = {
         let button = AuthButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -82,7 +84,28 @@ class SignUpController: UIViewController {
         contigureUI()
     }
     
-    // MARK: Selectors
+    // MARK: Selectors]]
+    
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+        let accountTypeIndex = accountTypeSegmentedControl.selectedSegmentIndex
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let uid = result?.user.uid else { return }
+            
+            let values: [String: Any] = ["email": email, "username": username, "accountType": accountTypeIndex]
+            
+            Database.database().reference().child("users").child(uid).updateChildValues(values) { error, ref in
+                print("계정생성 성공")
+            }
+        }
+    }
     
     @objc func handleShowSignUp() {
         navigationController?.popViewController(animated: true)
