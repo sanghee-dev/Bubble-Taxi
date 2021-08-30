@@ -50,14 +50,20 @@ class HomeController: UIViewController {
     
     func configureUI() {
         configureNavigationBar()
-        
-        view.addSubview(mapView)
-        mapView.frame = view.frame
+        configureMapView()
     }
     
     func configureNavigationBar() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .default
+    }
+    
+    func configureMapView() {
+        view.addSubview(mapView)
+        mapView.frame = view.frame
+        
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
 
 }
