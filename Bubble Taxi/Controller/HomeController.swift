@@ -14,13 +14,14 @@ class HomeController: UIViewController {
     // MARK: Properties
     
     private let mapView = MKMapView()
+    private let locationManager = CLLocationManager()
     
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //signOut()
         checkIfUserIsLoggedIn()
+        enableLocationServices()
     }
     
     // MARK: API
@@ -59,4 +60,28 @@ class HomeController: UIViewController {
         navigationController?.navigationBar.barStyle = .default
     }
 
+}
+
+// MARK: LocationServices
+
+extension HomeController: CLLocationManagerDelegate {
+    func enableLocationServices() {
+        locationManager.delegate = self
+        
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways:
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        case .authorizedWhenInUse: locationManager.requestAlwaysAuthorization()
+        case .notDetermined: locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied: break
+        @unknown default: break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
 }
