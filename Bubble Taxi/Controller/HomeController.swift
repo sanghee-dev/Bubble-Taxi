@@ -16,6 +16,8 @@ class HomeController: UIViewController {
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     
+    private let inputActivationView = LocationInputActivationView()
+    
     // MARK: Lifecycle
 
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class HomeController: UIViewController {
         }
     }
     
-    func signOut() {
+    private func signOut() {
         do {
             try Auth.auth().signOut()
         } catch let error {
@@ -48,22 +50,30 @@ class HomeController: UIViewController {
     
     // MARK: Helper Functions
     
-    func configureUI() {
+    private func configureUI() {
         configureNavigationBar()
         configureMapView()
+        configureInputActivationView()
     }
     
-    func configureNavigationBar() {
+    private func configureNavigationBar() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .default
     }
     
-    func configureMapView() {
+    private func configureMapView() {
         view.addSubview(mapView)
         mapView.frame = view.frame
         
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
+    }
+    
+    private func configureInputActivationView() {
+        view.addSubview(inputActivationView)
+        inputActivationView.centerX(inView: view)
+        inputActivationView.setDimensions(width: view.frame.width - 64, height: 48)
+        inputActivationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
     }
 
 }

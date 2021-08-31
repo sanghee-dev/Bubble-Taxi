@@ -11,6 +11,10 @@ class AuthButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        configureUI()
+    }
+    
+    private func configureUI() {
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         backgroundColor = .mainBlueTint

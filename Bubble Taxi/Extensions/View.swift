@@ -65,10 +65,17 @@ extension UIView {
         }
     }
     
-    func centerX(inView view: UIView) {
-        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    func centerX(inView view: UIView, constant: CGFloat = 0) {
+        centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: constant).isActive = true
     }
     func centerY(inView view: UIView, constant: CGFloat = 0) {
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
     }
+    
+    func setDimensions(width: CGFloat, height: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalToConstant: width).isActive = true
+        heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+    
 }

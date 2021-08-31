@@ -65,7 +65,7 @@ class SignUpController: UIViewController {
         return button
     }()
     
-    let alreadyHaveAccountButton: UIButton = {
+    private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Already have an account? ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         let signUpTitle = NSMutableAttributedString(string: "Log In", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint])
@@ -113,7 +113,7 @@ class SignUpController: UIViewController {
     
     // MARK: Helper Functions
     
-    func configureUI() {
+    private func configureUI() {
         configureNavigationBar()
         view.backgroundColor = .backgroundColor
         
@@ -134,7 +134,7 @@ class SignUpController: UIViewController {
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
     }
     
-    func configureNavigationBar() {
+    private func configureNavigationBar() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .default
     }

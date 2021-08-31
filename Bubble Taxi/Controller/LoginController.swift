@@ -55,7 +55,7 @@ class LoginController: UIViewController {
         return button
     }()
     
-    let dontHaveAccountButton: UIButton = {
+    private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account? ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         let signUpTitle = NSMutableAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .semibold), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint])
@@ -115,7 +115,7 @@ class LoginController: UIViewController {
     
     // MARK: Helper Functions
     
-    func configureUI() {
+    private func configureUI() {
         configureNavigationBar()
         view.backgroundColor = .backgroundColor
         
@@ -135,7 +135,7 @@ class LoginController: UIViewController {
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
     }
     
-    func configureNavigationBar() {
+    private func configureNavigationBar() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .default
     }
