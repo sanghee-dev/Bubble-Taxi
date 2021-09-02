@@ -30,11 +30,16 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
         enableLocationServices()
+        fetchUserData()
     }
     
     // MARK: API
     
-    func checkIfUserIsLoggedIn() {
+    private func fetchUserData() {
+        Service.shared.fetchUserData()
+    }
+    
+    private func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
             DispatchQueue.main.async {
                 let nav = UINavigationController(rootViewController: LoginController())
