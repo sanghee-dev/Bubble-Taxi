@@ -65,9 +65,9 @@
 		5E11F1F526D8C8C20092E974 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5E11F1F626D8C8D50092E974 /* View.swift */,
 				5E11F1FA26D8C92D0092E974 /* Color.swift */,
 				5E11F1F826D8C9030092E974 /* TextField.swift */,
-				5E11F1F626D8C8D50092E974 /* View.swift */,
 				5E11F20026D8DD020092E974 /* Label.swift */,
 			);
 			path = Extensions;

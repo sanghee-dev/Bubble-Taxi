@@ -20,4 +20,20 @@ extension UITextField {
         return tf
     }
     
+    func addHorizontalPadding(_ padding: CGFloat = 16) {
+        let paddingView = UIView()
+        paddingView.setDimensions(width: padding, height: 0)
+        leftView = paddingView
+        rightView = paddingView
+        leftViewMode = .always
+        rightViewMode = .always
+    }
+    
+    func addLeftPadding(_ paddingLeft: CGFloat = 16) {
+        let paddingView = UIView()
+        paddingView.setDimensions(width: paddingLeft, height: 0)
+        leftView = paddingView
+        leftViewMode = .always
+    }
+    
 }

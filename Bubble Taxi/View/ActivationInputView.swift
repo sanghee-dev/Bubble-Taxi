@@ -28,7 +28,7 @@ class ActivationInputView: UIView {
        let label = UILabel()
         label.text = "Where to?"
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .systemGray
+        label.textColor = .black
         return label
     }()
     
