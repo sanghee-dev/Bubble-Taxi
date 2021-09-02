@@ -38,7 +38,7 @@ class HomeController: UIViewController {
         if Auth.auth().currentUser?.uid == nil {
             DispatchQueue.main.async {
                 let nav = UINavigationController(rootViewController: LoginController())
-                //nav.modalPresentationStyle = .fullScreen
+                nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)
             }
         } else {
@@ -84,8 +84,9 @@ class HomeController: UIViewController {
         activationInputView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         activationInputView.alpha = 0
 
-        UIView.animate(withDuration: 0.5, animations: {
-            self.activationInputView.alpha = 1 })
+        UIView.animate(withDuration: 0.5) {
+            self.activationInputView.alpha = 1
+        }
     }
     
     private func configureLocationInputView() {
@@ -95,9 +96,10 @@ class HomeController: UIViewController {
         locationInputView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: locationInputViewHeight)
         locationInputView.alpha = 0
         
-        UIView.animate(withDuration: 0.3,
-                       animations: { self.locationInputView.alpha = 1 },
-                       completion: { _ in print("configureLocationInputView") })
+        UIView.animate(withDuration: 0.3) {
+            self.locationInputView.alpha = 1
+            self.tableView.frame.origin.y = self.locationInputViewHeight
+        }
     }
     
     private func configureTableView() {
@@ -106,15 +108,15 @@ class HomeController: UIViewController {
         
         tableView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 60
+        tableView.tableFooterView = UIView() // delete extra lines
         
         let height = view.frame.height - locationInputViewHeight
-        tableView.frame = CGRect(x: 0, y: view.frame.height - 100, width: view.frame.width, height: height)
+        tableView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: height)
         
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .systemGray6
         
         view.addSubview(tableView)
     }
-
 }
 
 // MARK: LocationServices
@@ -153,19 +155,37 @@ extension HomeController: ActivationInputViewDelegate {
 
 extension HomeController: LocationInputViewDelegate {
     func dismissLocationInputView() {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3) {
             self.locationInputView.alpha = 0
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.3, animations: {
+            self.tableView.frame.origin.y = self.view.frame.height
+        } completion: { _ in
+            UIView.animate(withDuration: 0.3) {
                 self.activationInputView.alpha = 1
-            })
-        })
+                self.locationInputView.removeFromSuperview()
+            }
+        }
     }
 }
 
+// MARK: Delegate
+
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Favorites" : " "
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let tableView = view as? UITableViewHeaderFooterView else { return }
+        tableView.contentView.backgroundColor = .systemGray6
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return section == 0 ? 2 : 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

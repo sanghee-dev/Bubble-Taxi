@@ -29,7 +29,7 @@ class LocationInputView: UIView {
         let label = UILabel()
         label.text = "Where to?"
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .black
+        label.textColor = .systemGray
         return label
     }()
     
