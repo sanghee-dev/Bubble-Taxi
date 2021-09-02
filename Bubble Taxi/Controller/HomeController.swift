@@ -22,6 +22,11 @@ class HomeController: UIViewController {
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
     
+    private var user: User? {
+        // called as soon as it gets set
+        didSet { locationInputView.user = user }
+    }
+    
     private final let locationInputViewHeight: CGFloat = 200
     
     // MARK: Lifecycle
@@ -36,7 +41,9 @@ class HomeController: UIViewController {
     // MARK: API
     
     private func fetchUserData() {
-        Service.shared.fetchUserData()
+        Service.shared.fetchUserData { user in
+            self.user = user
+        }
     }
     
     private func checkIfUserIsLoggedIn() {
