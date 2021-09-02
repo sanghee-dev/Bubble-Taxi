@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol LocationInputActivationViewDelegate: AnyObject {
+protocol ActivationInputViewDelegate: AnyObject {
     func presentLocationInputView()
 }
 
-class LocationInputActivationView: UIView {
+class ActivationInputView: UIView {
     
     // MARK: Properties
     
-    weak var delegate: LocationInputActivationViewDelegate?
+    weak var delegate: ActivationInputViewDelegate?
     
     private let indicatorView: UIView = {
         let view = UIView()
@@ -50,10 +50,7 @@ class LocationInputActivationView: UIView {
     private func configureView() {
         backgroundColor = .white
         layer.cornerRadius = 24
-        layer.shadowColor = UIColor.systemGray.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        layer.masksToBounds = false
+        addShadow()
     }
     
     private func configureIndicatorView() {

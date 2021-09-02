@@ -16,7 +16,8 @@ class HomeController: UIViewController {
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     
-    private let inputActivationView = LocationInputActivationView()
+    private let activationInputView = ActivationInputView()
+    private let locationInputView = LocationInputView()
     
     // MARK: Lifecycle
 
@@ -53,12 +54,11 @@ class HomeController: UIViewController {
     private func configureUI() {
         configureNavigationBar()
         configureMapView()
-        configureInputActivationView()
+        configureActivationInputView()
     }
     
     private func configureNavigationBar() {
         navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .default
     }
     
     private func configureMapView() {
@@ -69,18 +69,29 @@ class HomeController: UIViewController {
         mapView.userTrackingMode = .follow
     }
     
-    private func configureInputActivationView() {
-        inputActivationView.delegate = self
+    private func configureActivationInputView() {
+        activationInputView.delegate = self
         
-        view.addSubview(inputActivationView)
-        inputActivationView.centerX(inView: view)
-        inputActivationView.setDimensions(width: view.frame.width - 64, height: 48)
-        inputActivationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
-        inputActivationView.alpha = 0
+        view.addSubview(activationInputView)
+        activationInputView.centerX(inView: view)
+        activationInputView.setDimensions(width: view.frame.width - 64, height: 48)
+        activationInputView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        activationInputView.alpha = 0
+
+        UIView.animate(withDuration: 0.5, animations: {
+            self.activationInputView.alpha = 1 })
+    }
+    
+    private func configureLocationInputView() {
+        locationInputView.delegate = self
         
-        UIView.animate(withDuration: 2) {
-            self.inputActivationView.alpha = 1
-        }
+        view.addSubview(locationInputView)
+        locationInputView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 200)
+        locationInputView.alpha = 0
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: { self.locationInputView.alpha = 1 },
+                       completion: { _ in print("configureLocationInputView") })
     }
 
 }
@@ -109,8 +120,24 @@ extension HomeController: CLLocationManagerDelegate {
     }
 }
 
-extension HomeController: LocationInputActivationViewDelegate {
+// MARK: Delegate
+
+extension HomeController: ActivationInputViewDelegate {
     func presentLocationInputView() {
-        print("presentLocationInputView")
+        activationInputView.alpha = 0
+        configureLocationInputView()
+    }
+}
+
+
+extension HomeController: LocationInputViewDelegate {
+    func dismissLocationInputView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.locationInputView.alpha = 0
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.activationInputView.alpha = 1
+            })
+        })
     }
 }
