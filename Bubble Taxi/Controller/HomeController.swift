@@ -110,6 +110,7 @@ class HomeController: UIViewController {
         
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
+        mapView.delegate = self
     }
     
     private func configureActivationInputView() {
@@ -178,6 +179,23 @@ extension HomeController: LocationInputViewDelegate {
             }
         }
     }
+}
+
+// MAKR: MapView
+
+extension HomeController: MKMapViewDelegate {
+    
+    // change annotation image
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? DriverAnnotation {
+            let view = MKAnnotationView(annotation: annotation, reuseIdentifier: DRIVER_ANNOTATION)
+            view.image = UIImage(systemName: "location.circle.fill")
+            return view
+        }
+        return nil
+    }
+    
 }
 
 // MARK: Delegate

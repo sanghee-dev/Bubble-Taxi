@@ -15,3 +15,5 @@ let REF_DRIVER_LOCATIONS = DB_REF.child("driver-locations")
 let KEY_USERNAME = "username"
 let KEY_EMAIL = "email"
 let KEY_ACCOUNTTYPE = "accountType"
+
+let DRIVER_ANNOTATION = "DriverAnnotation"
