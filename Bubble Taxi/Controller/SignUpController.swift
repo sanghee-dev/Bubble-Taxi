@@ -87,7 +87,7 @@ class SignUpController: UIViewController {
         configureUI()
     }
     
-    // MARK: Selectors]]
+    // MARK: Selectors
     
     @objc func handleSignUp() {
         guard let email = emailTextField.text else { return }
@@ -121,10 +121,14 @@ class SignUpController: UIViewController {
     
     private func uploadUserDataAndShowHomeController(uid: String, values: [String: Any]) {
         REF_USERS.child(uid).updateChildValues(values) { error, ref in
-            guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController else { return }
-            controller.configureUI()
-            self.dismiss(animated: true, completion: nil)
+            self.showHomeController()
         }
+    }
+    
+    private func showHomeController() {
+        guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController else { return }
+        controller.configureUI()
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func configureUI() {

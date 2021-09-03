@@ -16,7 +16,7 @@ class HomeController: UIViewController {
     // MARK: Properties
     
     private let mapView = MKMapView()
-    private let sharedlocationHandler = LocationHandler.shared
+    private let sharedLocationManager = LocationHandler.shared.locationManager
     
     private let activationInputView = ActivationInputView()
     private let locationInputView = LocationInputView()
@@ -34,17 +34,33 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
-        sharedlocationHandler.enableLocationServices()
-        fetchUserData()
-        signOut()
+        enableLocationServices()
+        fetchData()
     }
     
     // MARK: API
     
+    private func fetchData() {
+        fetchUserData()
+        fetchDrivers()
+    }
+    
     private func fetchUserData() {
-        Service.shared.fetchUserData { user in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Service.shared.fetchUserData(uid: uid) { user in
             self.user = user
         }
+    }
+    
+    private func fetchDrivers() {
+        guard let location = sharedLocationManager?.location else { return }
+        Service.shared.fetchDrivers(location: location) { user in
+            print("DEBUG: Driver is \(user)")
+        }
+    }
+    
+    private func enableLocationServices() {
+        LocationHandler.shared.enableLocationServices()
     }
     
     private func checkIfUserIsLoggedIn() {
