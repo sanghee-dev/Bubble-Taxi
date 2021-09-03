@@ -28,6 +28,7 @@
 		5E937F6926E12241008210E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E937F6826E12241008210E2 /* Constants.swift */; };
 		5E937F6B26E12863008210E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E937F6A26E12863008210E2 /* User.swift */; };
 		5E937F6D26E1DF78008210E2 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E937F6C26E1DF78008210E2 /* LocationHandler.swift */; };
+		5E937F6F26E21FDC008210E2 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E937F6E26E21FDC008210E2 /* DriverAnnotation.swift */; };
 		5EB31AEC26DDE3B2008211B6 /* ActivationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB31AEB26DDE3B2008211B6 /* ActivationInputView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		5E937F6826E12241008210E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E937F6A26E12863008210E2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5E937F6C26E1DF78008210E2 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		5E937F6E26E21FDC008210E2 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		5EB31AEB26DDE3B2008211B6 /* ActivationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationInputView.swift; sourceTree = "<group>"; };
 		881E6CF0CEAAD4557CBD1046 /* Pods-Bubble Taxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bubble Taxi.release.xcconfig"; path = "Target Support Files/Pods-Bubble Taxi/Pods-Bubble Taxi.release.xcconfig"; sourceTree = "<group>"; };
 		B3E2E5C1DE07E0983CBB2A77 /* Pods_Bubble_Taxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bubble_Taxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5E937F6A26E12863008210E2 /* User.swift */,
+				5E937F6E26E21FDC008210E2 /* DriverAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				5E11F1F926D8C9030092E974 /* TextField.swift in Sources */,
 				5E417DC026D7627D003AA577 /* SceneDelegate.swift in Sources */,
 				5E11F20126D8DD020092E974 /* Label.swift in Sources */,
+				5E937F6F26E21FDC008210E2 /* DriverAnnotation.swift in Sources */,
 				5E11F1FB26D8C92D0092E974 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
