@@ -103,7 +103,7 @@ class LoginController: UIViewController {
                     print(error)
                     return
                 }
-                self.dismiss(animated: true, completion: nil)
+                showHomeController()
             }
         }
     }
@@ -114,6 +114,12 @@ class LoginController: UIViewController {
     }
     
     // MARK: Helper Functions
+    
+    private func showHomeController() {
+        guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController else { return }
+        controller.configureUI()
+        self.dismiss(animated: true, completion: nil)
+    }
     
     private func configureUI() {
         configureNavigationBar()

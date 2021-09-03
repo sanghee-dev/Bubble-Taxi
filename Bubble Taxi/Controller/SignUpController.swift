@@ -7,10 +7,13 @@
 
 import UIKit
 import Firebase
+import GeoFire
 
 class SignUpController: UIViewController {
     
     // MARK: Properties
+    
+    private var location = LocationHandler.shared.locationManager.location
     
     private lazy var emailContainerView: UIView = {
         let view = UIView().inputContainerView(imageName: "envelope", textField: emailTextField)
@@ -99,10 +102,13 @@ class SignUpController: UIViewController {
             }
             guard let uid = result?.user.uid else { return }
             
-            let values: [String: Any] = ["email": email, "username": username, "accountType": accountTypeIndex]
+            let values: [String: Any] = [KEY_EMAIL: email, KEY_USERNAME: username, KEY_ACCOUNTTYPE: accountTypeIndex]
             
-            Database.database().reference().child("users").child(uid).updateChildValues(values) { error, ref in
-                self.dismiss(animated: true, completion: nil)
+            let geofire = GeoFire(firebaseRef: accountTypeIndex == 0 ? REF_USER_LOCATIONS : REF_DRIVER_LOCATIONS)
+            guard let location = self.location else { return }
+
+            geofire.setLocation(location, forKey: uid) { error in
+                self.uploadUserDataAndShowHomeController(uid: uid, values: values)
             }
         }
     }
@@ -112,6 +118,14 @@ class SignUpController: UIViewController {
     }
     
     // MARK: Helper Functions
+    
+    private func uploadUserDataAndShowHomeController(uid: String, values: [String: Any]) {
+        REF_USERS.child(uid).updateChildValues(values) { error, ref in
+            guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController else { return }
+            controller.configureUI()
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     private func configureUI() {
         configureNavigationBar()
@@ -138,5 +152,6 @@ class SignUpController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .default
     }
+    
     
 }
